@@ -2,3 +2,19 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root{
+  --accent-color:#FF0070;
+  --title-color:#DB00FF;
+  --background-color: #000028;
+  --background-image:url(../images/cover-image-dark.png);
+  --paragraph-text-color: #F1B2CE;
+  --paragraph-title-color:#000028;
+  --accent-text-color:#FF0070;
+  --paragrpaph-title-background-color:#FF0070;
+  --lightbulb-size:9px;
+  --lightbulb-shadow:0px 0px 4px 2px var(--accent-color);
+  --border-hover-color:rgba(255, 0, 112, 0.4);
+  --rec-text:"REC";
+  --bald-font:700;
+  --normal-font:400;
+}
