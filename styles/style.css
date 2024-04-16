@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-/* *,*::before,*::after {outline: 1px solid red} */
+*,*::before,*::after {outline: 1px solid red}
 .page {
   font-family: 'IBM Plex mono', serif;
   color: var(--paragraph-text-color) ;
@@ -43,7 +43,8 @@
   background-image: var(--background-image);
   background-size: cover;
   background-position: center;
-  height: 768px;
+  min-height: 768px;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -138,7 +139,7 @@
 }
 
 
-.first_section {
+.reasons_section {
   margin-block-start: 60px;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -148,7 +149,7 @@
   padding-inline: 20px;
 }
 
-.second_grid_column {
+.accent_grid_column {
   grid-column-start: 2;
 }
 
@@ -183,7 +184,7 @@
 
 /*Секция 2*/
 
-.second_section {
+.distraction_section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -192,13 +193,13 @@
   padding-inline: 20px ;
 }
 
-.second_grid_row {
+.accent_grid_row {
   grid-row-start: 2;
 }
 
 /*Секция 3*/
 
-.third_section {
+.how_to_section {
   display:grid;
   grid-template-columns: 1fr 2fr;
   margin-block-start: 81px;
@@ -206,7 +207,7 @@
   padding-inline: 20px ;
 }
 
-.third_section_grid {
+.how_to_section_grid {
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -218,7 +219,7 @@
 
 /* Секция 4*/
 
-.fourth_section {
+.gallery_section {
   margin-block-start: 80px;
   padding-inline: 20px ;
 }
@@ -257,9 +258,15 @@
 }
 .footer {
   margin-block-start: 50px;
+  min-height: 768px;
+  height: 100vh;
 }
 
 .footer-title {
+  color: var(--title-color);
+  font-weight: var(--bald-font);
+  line-height: 129.53px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   text-shadow: 2px 2px 0 var(--accent-color);;
   margin-block-start: 300px;
   margin-block-end: 300px;
@@ -270,13 +277,13 @@
 @media (max-width: 768px){
   .header__theme-menu-list {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     flex-direction: column;
     list-style-type:  none;
   }
 
-  .header {
-    height: 1024px;
+  .header{
+    min-height: 1024px ;
   }
 
   .header__theme-menu {
@@ -293,24 +300,24 @@
     margin-block-start: 145px;
   }
 
-  .first_section {
+  .reasons_section {
     column-gap: 20px;
   }
 
-  .first_section .main_section_header{
-    width: 236px;
+  .reasons_section .main_section_header{
+    max-width: 300px;
   }
 
-  .second_section {
+  .distraction_section {
     display: flex;
     flex-direction: column;
   }
 
-  .second_section .main_section_header{
+  .distraction_section .main_section_header{
     width: 236px ;
   }
 
-  .third_section {
+  .how_to_section {
     gap:20px;
   }
 
@@ -319,7 +326,7 @@
   }
 
   .footer {
-    height: 1024px;
+    min-height: 1024px;
     margin-block-start: 50px;
   }
 
@@ -333,9 +340,13 @@
     margin-block-start: 55px;
   }
 
+  .header__theme-menu-list {
+    gap: 10px;
+  }
+
   .header {
-    height: 668px;
     padding-inline: 10px;
+    min-height: 668px;
   }
 
   .decorated-zone::before {
@@ -348,9 +359,14 @@
     inset-inline-start: 10px;
   }
 
-  .rec_element {
+  .rec_element::before {
     inset-block-start: 10px;
-    inset-inline-end: 38px;
+    inset-inline-end: 39px;
+  }
+
+  .rec_element::after {
+    inset-block-start: 18px;
+    inset-inline-end: 19px;
   }
 
   .header-title {
@@ -364,33 +380,33 @@
     margin-block-start: 55px;
   }
 
-  .first_section{
+  .reasons_section{
     margin-block-start: 40px;
     display: flex;
     flex-direction: column;
     padding-inline: 10px;
   }
-  .first_section .main_section_header{
+  .reasons_section .main_section_header{
     width: 100%;
   }
 
-  .second_section{
+  .distraction_section{
     padding-inline: 10px;
     margin-block-start: 50px;
   }
 
-  .second_section .main_section_header{
+  .distraction_section .main_section_header{
     width: 100% ;
   }
 
-  .third_section{
+  .how_to_section{
     display: flex;
     flex-direction: column;
     padding-inline: 10px;
     margin-block-start: 50px;
   }
 
-  .fourth_section{
+  .gallery_section{
     padding-inline: 10px;
     margin-block-start: 50px;
   }
@@ -403,13 +419,14 @@
   }
 
   .footer {
-    height: 668px;
+    min-height: 668px;
     margin-block-start: 25px;
   }
 
   .footer-title {
-    margin-block-start: 266px;
-    padding-inline-start:14px
+    margin-block-start: 250px;
+    padding-inline-start:14px;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
 
